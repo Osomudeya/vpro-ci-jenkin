@@ -15,7 +15,7 @@ pipeline {
 		NEXUS_PASS = 'facebook'
 		RELEASE_REPO = 'vprofile-release'
 		CENTRAL_REPO = 'vpro-maven-central'
-		NEXUSIP = '172.31.5.84'
+		NEXUSIP = '172.31.29.8'
 		NEXUSPORT = '8081'
 		NEXUS_GRP_REPO = 'vpro-maven-group'
         NEXUS_LOGIN = 'nexuslogin'
