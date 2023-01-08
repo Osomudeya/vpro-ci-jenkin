@@ -74,7 +74,7 @@ pipeline {
 
         stage("Quality Gate") {
             steps {
-                timeout(time: 10, unit: 'MINUTES') {
+                timeout(time: 1, unit: 'HOURS') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don't
                     waitForQualityGate abortPipeline: true
@@ -116,7 +116,7 @@ pipeline {
     post {
         always {
             echo 'Slack Notifications.'
-            slackSend channel: '#jenkins-cicd-zudonu',
+            slackSend channel: '#jenkins-cicd-zudonu'',
                 color: COLOR_MAP[currentBuild.currentResult],
                 message: "*${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
         }
